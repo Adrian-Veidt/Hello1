@@ -1,6 +1,23 @@
 public class Main {
 
-    puA' + i));
+    public static void main(String[] args) {
+
+                /*
+        System.out.println("Hello GitHub!");
+        for (int i=0;i<10; i++){
+            System.out.println(i);
+        }
+        */
+
+        Queue LongQ = new Queue(100);
+        Queue ShortQ = new Queue(4);
+        char ch;
+        int i;
+
+        System.out.println("LongQ for some ABC shit");
+
+        for (i = 0; i < 26; i++)
+            LongQ.put((char)('A' + i));
 
         System.out.println("And showing what LongQ got at this moment:");
 
