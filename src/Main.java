@@ -1,10 +1,14 @@
 public class Main {
 
     public static void main(String[] args) {
+
+                /*
         System.out.println("Hello GitHub!");
         for (int i=0;i<10; i++){
             System.out.println(i);
         }
+        */
+
         Queue LongQ = new Queue(100);
         Queue ShortQ = new Queue(4);
         char ch;
@@ -35,5 +39,6 @@ public class Main {
             ch = ShortQ.get();
             if(ch != (char) 0) System.out.println(ch);
         }
+
     }
 }
