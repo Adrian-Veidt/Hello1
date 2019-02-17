@@ -1,39 +1,53 @@
-public class Main {
+import java.util.Scanner;
 
-    public static void main(String[] args) {
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
 
-        
+        //Taking noOfRows value from the user
 
-        Queue LongQ = new Queue(100);
-        Queue ShortQ = new Queue(4);
-        char ch;
-        int i;
+        System.out.println("How Many Rows You Want In Your Pyramid?");
 
-        System.out.println("LongQ for some ABC shit");
+        int noOfRows = sc.nextInt();
 
-        for (i = 0; i < 26; i++)
-            LongQ.put((char)('A' + i));
+        //Initializing rowCount with 1
 
-        System.out.println("And showing what LongQ got at this moment:");
+        int rowCount = 1;
 
-        for (i=0; i <26; i++) {
-            ch = LongQ.get();
-            if (ch != (char) 0 ) System.out.print(ch);
-        }
-        System.out.println("\n");
+        System.out.println("Here Is Your Pyramid");
 
-        System.out.println("ShortQ is used for demonstration of errors");
-        for (i=0; i<5; i++) {
-            System.out.println("trying to save in Quee " + (char)('Z'-i) );
-            ShortQ.put((char)('Z'-i));
+        //Implementing the logic
+
+        for (int i = noOfRows; i >= 1; i--)
+        {
+            //Printing i*2 spaces at the beginning of each row
+
+            for (int j = 1; j <= i*2; j++)
+            {
+                System.out.print(" ");
+            }
+
+            //Printing j where j value will be from i to noOfRows
+
+            for (int j = i; j <= noOfRows; j++)
+            {
+                System.out.print(j+" ");
+            }
+
+            //Printing j where j value will be from noOfRows-1 to i
+
+            for (int j = noOfRows-1; j >= i; j--)
+            {
+                System.out.print(j+" ");
+            }
+
             System.out.println();
-        }
-        System.out.println();
-        System.out.println("ShortQ: ");
-        for (i=0; i<5; i++) {
-            ch = ShortQ.get();
-            if(ch != (char) 0) System.out.println(ch);
-        }
 
+            //Incrementing the rowCount
+
+            rowCount++;
+        }
     }
 }
